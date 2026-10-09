@@ -44,6 +44,7 @@ a {
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
+
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--accent);
@@ -54,7 +55,7 @@ button:focus-visible {
 .shell {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 0 var(--pad-x)
+  padding: 0 var(--pad-x);
 }
 
 .site-header {
@@ -65,6 +66,7 @@ button:focus-visible {
   padding: 1.75rem 0;
   border-bottom: 1px solid var(--line);
 }
+
 .wordmark {
   font-size: 1.1rem;
   font-weight: 700;
@@ -72,6 +74,7 @@ button:focus-visible {
   color: var(--ink);
   text-decoration: none;
 }
+
 .header-link {
   font-family: Archivo, sans-serif;
   font-size: 0.9rem;
@@ -79,13 +82,15 @@ button:focus-visible {
 }
 
 .hero {
-    padding: clamp(4rem, 12vh, 8rem) 0 clamp(3.5rem, 9vh, 6.5rem);
+  padding: clamp(4rem, 12vh, 8rem) 0 clamp(3.5rem, 9vh, 6.5rem);
 }
+
 .hero h1 {
   font-size: clamp(2.3rem, 5.6vw, 4rem);
   max-width: 19ch;
   font-weight: 600;
 }
+
 .hero h1 .rule {
   display: block;
   width: 3.25rem;
@@ -93,6 +98,7 @@ button:focus-visible {
   background: var(--accent);
   margin-bottom: 1.75rem;
 }
+
 .hero p {
   margin: 1.75rem 0 0;
   max-width: 52ch;
@@ -105,65 +111,50 @@ button:focus-visible {
   gap: var(--gap);
   padding-bottom: clamp(4rem, 10vh, 7rem);
 }
+
 .area {
-  display: grid;
-  grid-template-columns: minmax(200px, 300px) 1fr;
-  gap: clamp(1.5rem, 4vw, 3.25rem);
-  align-items: start;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 3px;
   padding: clamp(1.25rem, 3vw, 2rem);
 }
-.area-figure {
-  aspect-ratio: 4 / 3;
-  background-color: var(--sand);
-  background-image: repeating-linear-gradient(
-    135deg,
-    rgba(22, 38, 43, 0.05) 0 1px,
-    transparent 1px 11px
-  );
-  display: grid;
-  place-items: center;
-  border-radius: 2px;
-}
-.area-figure span {
-  font-family: Archivo, sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  color: var(--ink-soft);
-}
+
 .area-body {
   padding-top: 0.25rem;
 }
+
 .area-body h2 {
   font-size: clamp(1.35rem, 2.4vw, 1.75rem);
   padding-bottom: 0.9rem;
   border-bottom: 1px solid var(--line);
 }
+
 .area-body ul {
   list-style: none;
-  margin: 1.25rem 0 0;
+  margin: 1rem 0 0;
   padding: 0;
   max-width: var(--measure);
 }
+
 .area-body li {
   position: relative;
-  padding-left: 1.6rem;
-  margin-bottom: 0.7rem;
+  padding: 0.6rem 0 0.6rem 1.6rem;
   color: var(--ink-soft);
+  line-height: 1.5;
 }
+
+.area-body li + li {
+  border-top: 1px solid var(--line);
+}
+
 .area-body li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.72em;
+  top: calc(0.6rem + 0.68em);
   width: 0.8rem;
   height: 2px;
   background: var(--accent);
-}
-.area-body li:last-child {
-  margin-bottom: 0;
 }
 
 .site-footer {
@@ -171,21 +162,25 @@ button:focus-visible {
   border-top: 1px solid var(--line);
   padding: clamp(3rem, 8vh, 4.5rem) 0;
 }
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--gap);
   align-items: start;
 }
+
 .footer-grid h2 {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
 }
+
 .footer-grid p {
   margin: 0;
   color: var(--ink-soft);
   max-width: 42ch;
 }
+
 .contact-list {
   list-style: none;
   margin: 0;
@@ -193,10 +188,12 @@ button:focus-visible {
   font-family: Archivo, sans-serif;
   font-size: 0.95rem;
 }
+
 .contact-list li {
   margin-bottom: 0.65rem;
   color: var(--ink-soft);
 }
+
 .contact-list strong {
   display: block;
   font-weight: 500;
@@ -204,6 +201,7 @@ button:focus-visible {
   letter-spacing: 0.06em;
   color: var(--accent);
 }
+
 .footer-base {
   margin-top: clamp(2.5rem, 6vh, 4rem);
   padding-top: 1.5rem;
@@ -213,19 +211,25 @@ button:focus-visible {
   font-size: 0.9rem;
   color: var(--ink-soft);
 }
+
 .footer-base .wordmark {
   font-size: 0.95rem;
 }
 
 @media (max-width: 760px) {
-  .area {
-    grid-template-columns: 1fr;
+  .area-body li {
+    font-size: 0.95rem;
   }
-  .area-figure {
-    aspect-ratio: 16 / 9;
+
+  .hero p {
+    font-size: 1rem;
   }
-  .footer-grid {
-    grid-template-columns: 1fr;
+
+  .contact-list {
+    font-size: 0.9rem;
+  }
+
+  .footer-base {
+    font-size: 0.85rem;
   }
 }
-
