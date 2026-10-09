@@ -1,0 +1,233 @@
+:root {
+  --paper: #f3f5f4;
+  --surface: #ffffff;
+  --ink: #16262b;
+  --ink-soft: #4a5c60;
+  --line: #dce3e1;
+  --accent: #0f6f66;
+  --accent-soft: #e3efec;
+  --sand: #e8e3da;
+  --measure: 62ch;
+  --gap: clamp(1.5rem, 4vw, 3rem);
+  --pad-x: clamp(1.25rem, 6vw, 5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.wordmark {
+  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 var(--pad-x)
+}
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.wordmark {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.header-link {
+  font-family: Archivo, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+.hero {
+    padding: clamp(4rem, 12vh, 8rem) 0 clamp(3.5rem, 9vh, 6.5rem);
+}
+.hero h1 {
+  font-size: clamp(2.3rem, 5.6vw, 4rem);
+  max-width: 19ch;
+  font-weight: 600;
+}
+.hero h1 .rule {
+  display: block;
+  width: 3.25rem;
+  height: 3px;
+  background: var(--accent);
+  margin-bottom: 1.75rem;
+}
+.hero p {
+  margin: 1.75rem 0 0;
+  max-width: 52ch;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+}
+
+.areas {
+  display: grid;
+  gap: var(--gap);
+  padding-bottom: clamp(4rem, 10vh, 7rem);
+}
+.area {
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) 1fr;
+  gap: clamp(1.5rem, 4vw, 3.25rem);
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+.area-figure {
+  aspect-ratio: 4 / 3;
+  background-color: var(--sand);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(22, 38, 43, 0.05) 0 1px,
+    transparent 1px 11px
+  );
+  display: grid;
+  place-items: center;
+  border-radius: 2px;
+}
+.area-figure span {
+  font-family: Archivo, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+.area-body {
+  padding-top: 0.25rem;
+}
+.area-body h2 {
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+.area-body ul {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  max-width: var(--measure);
+}
+.area-body li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.7rem;
+  color: var(--ink-soft);
+}
+.area-body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.8rem;
+  height: 2px;
+  background: var(--accent);
+}
+.area-body li:last-child {
+  margin-bottom: 0;
+}
+
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  padding: clamp(3rem, 8vh, 4.5rem) 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  align-items: start;
+}
+.footer-grid h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.footer-grid p {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 42ch;
+}
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: Archivo, sans-serif;
+  font-size: 0.95rem;
+}
+.contact-list li {
+  margin-bottom: 0.65rem;
+  color: var(--ink-soft);
+}
+.contact-list strong {
+  display: block;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+.footer-base {
+  margin-top: clamp(2.5rem, 6vh, 4rem);
+  padding-top: 1.5rem;
+  /* border-top: 1px solid var(--line); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.footer-base .wordmark {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .area {
+    grid-template-columns: 1fr;
+  }
+  .area-figure {
+    aspect-ratio: 16 / 9;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
